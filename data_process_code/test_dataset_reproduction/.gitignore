@@ -1,0 +1,17 @@
+# 원본 데이터
+upload/*
+
+# 빈 upload 폴더는 GitHub에 유지
+!upload/.gitkeep
+
+# 실행 중 생성되는 중간 파일
+test_build/*.pkl
+
+# 최종 및 비교용 CSV
+final_test_features_31cols*.csv
+fraudTest_full_features.csv
+
+# Python 임시 파일
+__pycache__/
+test_build/__pycache__/
+*.pyc
