@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+pandas
+lightgbm
+joblib
+python-multipart
