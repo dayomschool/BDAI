@@ -1,6 +1,8 @@
-fraudTrain_feature_engineering.csv
-fraudTrain.csv
-fraudTest.csv
-data/
-tableau/
+.ipynb_checkpoints/
 __pycache__/
+*.pyc
+.venv/
+venv/
+*.csv
+
+# 기존 GitHub .gitignore에 있던 내용도 아래에 유지
