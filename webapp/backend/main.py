@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 BASE_DIR = Path(__file__).resolve().parent
-MODEL_PATH = BASE_DIR / "model" / "final_lightgbm_combination3.joblib"
+MODEL_PATH = BASE_DIR / "model" / "final_lightgbm_leakfree.joblib"
 CLUSTER_MODEL_PATH = BASE_DIR / "model" / "lightGBM_combination3_K7_cluster_model.joblib"
 SAMPLE_PATH = BASE_DIR / "data" / "demo_sample.csv"
 FRONTEND_DIR = BASE_DIR.parent / "frontend"
@@ -35,8 +35,8 @@ CATEGORICAL_FEATURES = package["categorical_features"]
 CATEGORY_LEVELS = package["category_levels"]
 THRESHOLD = package["threshold"]
 
-# 5단계 위험등급 경계값 (Tableau 대시보드 merge_k7_from_minjeong.py와 동일 기준)
-EMERGENCY_THRESHOLD = 0.9918
+# 5단계 위험등급 경계값 (leak-free 재학습 후 재검증한 값 — Tableau와 동일 기준)
+EMERGENCY_THRESHOLD = 0.999
 TIER_BOUNDARIES = [0.0, 0.01, 0.50, THRESHOLD, EMERGENCY_THRESHOLD, 1.0 + 1e-9]
 TIER_LABELS = ["일반", "관찰", "관심", "위험", "긴급"]
 TIER_COLOR = {
