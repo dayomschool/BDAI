@@ -7,14 +7,16 @@ import joblib
 import lightgbm as lgb
 from sklearn.model_selection import TimeSeriesSplit
 
-BASE = Path(r"C:\Users\user\Desktop\bdai부캠\BDAI")
-TRAIN_11 = BASE / "data" / "train_11features.csv"
-TEST_11 = BASE / "data" / "test_11features.csv"
-RAW_TRAIN = BASE / "data" / "fraudTrain.csv"
-RAW_TEST = BASE / "data" / "fraudTest.csv"
-FINAL_MODEL_PATH = BASE / "data" / "final_lightgbm_leakfree.joblib"
-CLUSTER_MODEL_PATH = BASE / "webapp" / "backend" / "model" / "lightGBM_combination3_K7_cluster_model.joblib"
-OUT_PATH = BASE / "tableau" / "tableau_export_leakfree.csv"
+PROJECT_ROOT = Path(r"C:\Users\splen\OneDrive\Desktop\BDAI_\BOOSTMAP\Fraud-FDS-Project")
+REPO_ROOT = PROJECT_ROOT / "revision" / "BDAI"   # git clone 받은 폴더
+
+TRAIN_11 = PROJECT_ROOT / "revision" / "train_11features.csv"
+TEST_11 = PROJECT_ROOT / "revision" / "test_11features.csv"
+RAW_TRAIN = PROJECT_ROOT / "data" / "raw" / "fraudTrain.csv"
+RAW_TEST = PROJECT_ROOT / "data" / "raw" / "fraudTest.csv"
+FINAL_MODEL_PATH = REPO_ROOT / "webapp" / "backend" / "model" / "final_lightgbm_leakfree.joblib"
+CLUSTER_MODEL_PATH = REPO_ROOT / "webapp" / "backend" / "model" / "lightGBM_combination3_K7_cluster_model.joblib"
+OUT_PATH = PROJECT_ROOT / "revision" / "tableau_export_leakfree.csv"
 
 FEATURE_COLUMNS = [
     "category", "amt", "trans_hour", "age",

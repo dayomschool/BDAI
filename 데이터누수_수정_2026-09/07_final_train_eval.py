@@ -29,8 +29,8 @@ BASE = dict(
     random_state=42, n_jobs=-1, verbosity=-1,
 )
 
-train_path = Path(r"C:\Users\user\Desktop\bdai부캠\BDAI\data\train_11features.csv")
-test_path = Path(r"C:\Users\user\Desktop\bdai부캠\BDAI\data\test_11features.csv")
+train_path = Path(r"C:\Users\splen\OneDrive\Desktop\BDAI_\BOOSTMAP\Fraud-FDS-Project\revision\train_11features.csv")
+test_path = Path(r"C:\Users\splen\OneDrive\Desktop\BDAI_\BOOSTMAP\Fraud-FDS-Project\revision\test_11features.csv")
 
 train_df = pd.read_csv(train_path, parse_dates=["trans_date_trans_time"]).sort_values("trans_date_trans_time").reset_index(drop=True)
 test_df = pd.read_csv(test_path, parse_dates=["trans_date_trans_time"]).sort_values("trans_date_trans_time").reset_index(drop=True)
